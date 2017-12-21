@@ -1,0 +1,8 @@
+{
+  "name": "score-it",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
