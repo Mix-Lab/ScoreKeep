@@ -14,55 +14,51 @@
 
 
 <ion-content padding>
-  <ion-chip style="float:left;" color="primary">
+  <ion-chip style="float:left;width:40%;" color="primary">
     <ion-label>Team 1</ion-label>
-    <ion-select name="selectTeam1" [selectOptions]="selectTeamOptions">
+    <ion-select [(ngModel)]="match.team1" name="selectTeam1" [selectOptions]="selectTeamOptions">
       <ion-option value="option1Value">Option1</ion-option>
       <ion-option value="option2Value">Option2</ion-option>
     </ion-select>
-  </ion-chip>Vs.
-  <ion-chip style="float:right;" color="primary">
+  </ion-chip> Vs.
+  <ion-chip style="float:right;width:40%;" color="primary">
     <ion-label>Team 2</ion-label>
-    <ion-select name="selectTeam2">
+    <ion-select [(ngModel)]="match.team2" name="selectTeam2" [selectOptions]="selectTeamOptions">
       <ion-option value="option1Value">Option1</ion-option>
       <ion-option value="option2Value">Option2</ion-option>
     </ion-select>
   </ion-chip>
   <ion-item>
-    <ion-label color="primary">Date</ion-label>
-    <ion-datetime displayFormat="MMM DD, YYYY" pickerFormat="MMMM DD YYYY"></ion-datetime>
+    <ion-label color="primary">Venue</ion-label>
+    <ion-input [(ngModel)]="match.venue" type="text" placeholder="Enter Ground"></ion-input>>
   </ion-item>
   <ion-item>
-      <ion-label color="primary">Venue</ion-label>
-      <ion-input type="text" placeholder="Enter Ground"></ion-input>>
-    </ion-item>
-  <ion-item>
     <ion-label color="primary">Overs</ion-label>
-    <ion-input type="number" value="5"></ion-input>
+    <ion-input [(ngModel)]="match.overs" type="number" value="5"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label color="primary">Toss Won By</ion-label>
-    <ion-select interface="popover">
+    <ion-select [(ngModel)]="match.tossWonBy" interface="popover">
       <ion-option>Team 1</ion-option>
       <ion-option>Team 2</ion-option>
     </ion-select>
   </ion-item>
   <ion-item>
     <ion-label color="primary">Team 1 Opted To</ion-label>
-    <ion-select interface="popover">
+    <ion-select [(ngModel)]="match.tossTeamOptedFor" interface="popover">
       <ion-option>Bat</ion-option>
       <ion-option>Bowl</ion-option>
     </ion-select>
   </ion-item>
   <ion-item>
     <ion-label color="primary">Runs For Noball</ion-label>
-    <ion-input type="number" value="1" min="0"></ion-input>
+    <ion-input [(ngModel)]="match.noBallRuns" type="number" value="1" min="0"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label color="primary">Runs For Wide</ion-label>
-    <ion-input type="number" value="1" min="0"></ion-input>
+    <ion-input [(ngModel)]="match.wideBallRuns" type="number" value="1" min="0"></ion-input>
   </ion-item>
   <ion-footer>
-    <button ion-button full>Start Match</button>
+    <button ion-button full (click)="addMatch(match)">Start Match</button>
   </ion-footer>
 </ion-content>
