@@ -9,6 +9,8 @@ import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MatchService } from './services/match/match.service';
+import { TeamService } from './services/team/team.service';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MatchService } from './services/match/match.service';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    MatchService
+    MatchService,
+    TeamService,
+    SQLite
   ]
 })
 export class AppModule { }
