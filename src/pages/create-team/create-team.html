@@ -15,11 +15,11 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-input type="text" placeholder="Name of the team"></ion-input>
+    <ion-input type="text" placeholder="Name of the team" [(ngModel)]="teamNameString"></ion-input>
   </ion-item>
   <ion-item>
     <ion-input #focusInput type="text" placeholder="Enter Player Name" [(ngModel)]="playerNameString"></ion-input>
-    <button ion-button icon-only item-right (click)="onPlayerAdded()">
+    <button ion-button icon-only item-right (click)="addPlayer()">
       <ion-icon name="add-circle"></ion-icon>
     </button>
   </ion-item>
@@ -30,6 +30,6 @@
     </ion-list>
   </ion-card>
   <ion-footer>
-    <button ion-button full color="primary">Submit Team</button>
+    <button ion-button full color="primary" (click)="createTeam()">Submit Team</button>
   </ion-footer>
 </ion-content>
